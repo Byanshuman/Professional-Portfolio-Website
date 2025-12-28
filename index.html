@@ -6,11 +6,13 @@
   <title>HR Professional Portfolio - ANSHUMAN YADAV</title>
 
   <!-- Main Theme -->
-  <link rel="stylesheet" href="theme.css">
   <link rel="stylesheet" href="theme.css?v=3">
 
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Meta for SEO -->
+  <meta name="description" content="Portfolio of Anshuman Yadav, HR Professional specializing in Psychology, HRM, and Organizational Behavior.">
 </head>
 
 <body>
@@ -41,12 +43,10 @@
     <div class="hero-content">
       <h1>Hi, I'm ANSHUMAN YADAV</h1>
       <p>M.A. Psychology (Silver Medalist) | MBA HR&OB | HR Professional</p>
-
       <p class="subtitle">
         Passionate about People, Performance, and Potential | Researcher |
         Human Behaviour, Work & Policy | Future Think Tank Architect
       </p>
-
       <div class="hero-buttons">
         <a href="#projects" class="btn btn-primary">View My Work</a>
         <a href="#contact" class="btn btn-secondary">Get in Touch</a>
@@ -70,18 +70,15 @@
             workplace wellbeing, and the behavioral science behind leadership and motivation.
           </p>
         </div>
-
         <p>
           With an M.A. in Psychology (Silver Medalist) and ongoing MBA in HR&OB from Delhi University,
           I bring a unique blend of psychological expertise and HR knowledge.
         </p>
-
         <div class="cv-download">
-          <a href="resume.html" class="btn btn-resume" target="_blank">
+          <a href="resume.pdf" class="btn btn-resume" target="_blank">
             Download My Resume (PDF)
           </a>
         </div>
-
         <div class="about-info">
           <div class="info-item">
             <h4>Education</h4>
@@ -149,14 +146,33 @@
     </div>
   </section>
 
-  <!-- Contact -->
+  <!-- Certifications Section -->
+  <section id="certifications" class="certifications">
+    <div class="container">
+      <h2>Certifications</h2>
+      <p>Coming soon...</p>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section id="blog" class="blog">
+    <div class="container">
+      <h2>Blog</h2>
+      <p>Insights on HR, Psychology, and Workplace Trends.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
   <section id="contact" class="contact">
     <div class="container">
       <h2>Get in Touch</h2>
       <form class="contact-form" id="contactForm">
-        <input type="text" id="name" placeholder="Your Name" required>
-        <input type="email" id="email" placeholder="Your Email" required>
-        <textarea id="message" placeholder="Message" rows="5" required></textarea>
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
         <button type="submit" class="btn btn-primary">Send</button>
       </form>
       <p id="formStatus"></p>
@@ -177,7 +193,7 @@
       themeToggle.textContent = document.body.classList.contains("dark-theme") ? "☀️" : "🌙";
     });
 
-    // Smooth Scroll for Nav Links
+    // Smooth Scroll
     document.querySelectorAll(".nav-link").forEach(link => {
       link.addEventListener("click", function(e) {
         e.preventDefault();
@@ -187,10 +203,9 @@
       });
     });
 
-    // Contact Form Submission (Demo)
+    // Contact Form Demo
     const contactForm = document.getElementById("contactForm");
     const formStatus = document.getElementById("formStatus");
-
     contactForm.addEventListener("submit", function(e) {
       e.preventDefault();
       formStatus.textContent = "✅ Thank you! Your message has been sent.";
@@ -200,3 +215,4 @@
 
 </body>
 </html>
+
