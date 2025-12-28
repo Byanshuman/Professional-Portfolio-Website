@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - ANSHUMAN YADAV</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f5f5f5; }
+        @media print { body { background: white; } }
+        .container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        @media print { .container { box-shadow: none; padding: 20px; } }
+        
+        .header { text-align: center; border-bottom: 3px solid #667eea; padding-bottom: 20px; margin-bottom: 30px; }
+        .header h1 { font-size: 32px; color: #667eea; margin-bottom: 5px; }
+        .header p { color: #666; margin: 5px 0; font-weight: 600; }
+        .contact-info { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 10px; font-size: 14px; }
+        .contact-info a { color: #667eea; text-decoration: none; }
+        
+        .section { margin-bottom: 30px; }
+        .section h2 { font-size: 18px; color: #667eea; border-bottom: 2px solid #667eea; padding-bottom: 8px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .entry { margin-bottom: 20px; }
+        .entry-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 5px; }
+        .entry-title { font-size: 16px; font-weight: bold; color: #333; }
+        .entry-subtitle { color: #666; font-style: italic; }
+        .entry-date { color: #999; font-size: 14px; white-space: nowrap; }
+        .entry-description { color: #555; margin-top: 8px; line-height: 1.5; font-size: 14px; }
+        
+        .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .skill-category { background: #f9f9f9; padding: 15px; border-left: 4px solid #667eea; border-radius: 4px; }
+        .skill-category h3 { color: #667eea; margin-bottom: 10px; font-size: 14px; text-transform: uppercase; }
+        .skill-category ul { list-style: none; }
+        .skill-category li { color: #555; padding: 4px 0; font-size: 14px; }
+        @media (max-width: 768px) { .skills-grid { grid-template-columns: 1fr; } }
+        
+        .highlights { background: #f0f4ff; padding: 15px; border-radius: 4px; margin-bottom: 20px; border-left: 4px solid #667eea; }
+        .highlights h3 { color: #667eea; margin-bottom: 10px; font-size: 14px; text-transform: uppercase; }
+        .highlights ul { margin-left: 20px; color: #555; }
+        .highlights li { margin: 5px 0; font-size: 14px; }
+
+        /* Print Button Style */
+        #printBtn {
+            position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: #667eea; color: white;
+            border: none; border-radius: 4px; cursor: pointer; font-size: 14px; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        @media print { #printBtn { display: none; } }
+    </style>
+</head>
+<body>
+    <button id="printBtn" onclick="window.print()">Print to PDF</button>
+
+    <div class="container">
+        <div class="header">
+            <h1>ANSHUMAN YADAV</h1>
+            <p>M.A. Psychology (Silver Medalist) | MBA HR&OB | Strategic HR Analyst</p>
+            <div class="contact-info">
+                <a href="mailto:bytheanshuman@gmail.com">bytheanshuman@gmail.com</a>
+                <span>Prayagraj, Uttar Pradesh, India</span>
+                <a href="https://linkedin.com/in/byanshuman">LinkedIn</a>
+                <a href="https://github.com/byanshuman">GitHub</a>
+                <a href="https://byanshuman.github.io">Portfolio</a>
+            </div>
+        </div>
+
+        <div class="highlights">
+            <h3>Professional Summary</h3>
+            <ul>
+                <li><strong>Strategic HR Profile:</strong> Combining M.A. Psychology (Silver Medalist) with MBA in HR & OB to drive data-driven people strategies.</li>
+                <li><strong>Tech-Savvy:</strong> Proficient in Python, SQL, and Building HR Analytics Dashboards. Bridging the gap between HR Operations and Technology.</li>
+                <li><strong>Experience:</strong> Research Assistant experience in behavioral analysis, data collection, and SPSS statistics.</li>
+                <li><strong>Target Roles:</strong> Open to opportunities in HR Operations, HR Analytics, Talent Acquisition, and HRIS Implementation.</li>
+                <li><strong>Core Skills:</strong> Workday (Conceptual), SAP SuccessFactors, Recruitment Funnels, Training ROI, and Compensation Analysis.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Experience</h2>
+            <div class="entry">
+                <div class="entry-header">
+                    <div>
+                        <div class="entry-title">Research Assistant</div>
+                        <div class="entry-subtitle">J.S. Institute of Education, Shikohabad</div>
+                    </div>
+                    <div class="entry-date">Jul 2024 - Dec 2024</div>
+                </div>
+                <div class="entry-description">
+                    <strong>Focus:</strong> Cognitive Processes & Behavioral Analysis
+                    <ul>
+                        <li>Assisted in academic research projects focusing on cognitive processes and learning behavior.</li>
+                        <li>Conducted quantitative and qualitative data collection and performed statistical analysis using SPSS.</li>
+                        <li>Supported the development of research instruments including questionnaires and interview protocols.</li>
+                        <li>Drafted research proposals and summaries for departmental seminars and internal publications.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Projects & Technical Portfolio</h2>
+            
+            <div class="entry">
+                <div class="entry-header">
+                    <div class="entry-title">HR Command Center & Analytics Suite</div>
+                    <div class="entry-date">2025</div>
+                </div>
+                <div class="entry-description">
+                    Developed a comprehensive suite of strategic HR tools using JavaScript and HTML5 to quantify human capital metrics.
+                    <ul>
+                        <li><strong>Tools Built:</strong> Cost of Turnover Calculator, Training ROI Projector, Bradford Factor (Absenteeism) Tracker, Salary Compa-Ratio Analyzer, and Recruitment Funnel Planner.</li>
+                        <li><strong>Impact:</strong> Enables data-driven decision making by translating "soft" HR concepts into financial risk and operational efficiency metrics.</li>
+                        <li><strong>Features:</strong> Interactive dashboards, visual data representation, and strategic insight generation.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <div class="entry-title">HRM System (Python & Flask)</div>
+                    <div class="entry-date">2024</div>
+                </div>
+                <div class="entry-description">
+                    Engineered a backend Human Resource Management System using Python, Flask, and SQLAlchemy.
+                    <ul>
+                        <li>Implemented core HR modules: Employee Management, Payroll Processing, Attendance Tracking, and Leave Requests.</li>
+                        <li>Designed secure authentication and authorization protocols using JWT.</li>
+                        <li>Optimized database relationships and RESTful API endpoints for seamless data retrieval.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <div class="entry-title">Psychological Research & Behavioral Analysis</div>
+                    <div class="entry-date">2023 - 2024</div>
+                </div>
+                <div class="entry-description">
+                    Conducted extensive research on personality theories and emotional development during postgraduate studies.
+                    <ul>
+                        <li>Applied statistical methods (SPSS) to analyze behavioral data and identify key performance drivers.</li>
+                        <li>Curated psychological case studies used for classroom teaching and peer mentorship programs.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Education</h2>
+            <div class="entry">
+                <div class="entry-header">
+                    <div>
+                        <div class="entry-title">Master of Business Administration - HR & OB</div>
+                        <div class="entry-subtitle">Delhi University</div>
+                    </div>
+                    <div class="entry-date">Jul 2025 - Sep 2027</div>
+                </div>
+            </div>
+            <div class="entry">
+                <div class="entry-header">
+                    <div>
+                        <div class="entry-title">Master of Arts - Psychology (Silver Medalist)</div>
+                        <div class="entry-subtitle">J.S. Institute of Education, Shikohabad</div>
+                    </div>
+                    <div class="entry-date">Apr 2022 - Oct 2024</div>
+                </div>
+                <div class="entry-description">Grade: 8.52/10. Awarded Silver Medal for Academic Excellence.</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>HR Tech & Analytics</h3>
+                    <ul>
+                        <li>Workday (Conceptual)</li>
+                        <li>SAP SuccessFactors</li>
+                        <li>Bradford Factor Analysis</li>
+                        <li>Recruitment Funnel Metrics</li>
+                        <li>Payroll & Compliance</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Programming & Data</h3>
+                    <ul>
+                        <li>Python (Flask, SQLAlchemy)</li>
+                        <li>SPSS (Statistical Analysis)</li>
+                        <li>SQL & Database Management</li>
+                        <li>HTML5 / CSS3 / JavaScript</li>
+                        <li>REST API Development</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>HR Competencies</h3>
+                    <ul>
+                        <li>Talent Acquisition</li>
+                        <li>Employee Engagement</li>
+                        <li>Organizational Behavior</li>
+                        <li>Compensation & Benefits</li>
+                        <li>Performance Management</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Soft Skills</h3>
+                    <ul>
+                        <li>Public Speaking</li>
+                        <li>Educational Consulting</li>
+                        <li>Strategic Communication</li>
+                        <li>Research & Writing</li>
+                        <li>Leadership</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Certifications</h2>
+            <div class="entry">
+                <div class="entry-header">
+                    <div class="entry-title">Diploma in Administrative Human Resources Management (HRM)</div>
+                    <div class="entry-date">Aug 2025</div>
+                </div>
+                <div class="entry-description">Academy of Genius Graduates</div>
+            </div>
+            <div class="entry">
+                <div class="entry-header">
+                    <div class="entry-title">ICT Essentials Course for Teachers</div>
+                    <div class="entry-date">Mar 2025</div>
+                </div>
+                <div class="entry-description">UNESCO</div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
