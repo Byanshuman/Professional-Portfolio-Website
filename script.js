@@ -1,38 +1,123 @@
-body {
-  --c1: #041806;
-  --c2: #0a0e27;
-  --c3: #151a3a;
-  --c4: #202540;
-  --c5: #2a304a;
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
 
-  --pattern: 
-    radial-gradient(circle at 96px 56px, var(--c3) 5px, var(--c2) 6px 9px, var(--c3) 10px 15px, var(--c2) 16px 17px, var(--c3) 18px 23px, var(--c2) 24px 25px, transparent 26px),
-    radial-gradient(circle at 96px 0, var(--c3) 5px, var(--c2) 6px 9px, var(--c3) 10px 15px, var(--c2) 16px 17px, var(--c3) 18px 23px, var(--c2) 24px 25px, transparent 26px),
-    radial-gradient(circle at 48px 28px, var(--c3) 5px, var(--c2) 6px 9px, var(--c3) 10px 15px, var(--c2) 16px 17px, var(--c3) 18px 23px, var(--c2) 24px 25px, transparent 26px),
-    radial-gradient(circle at 0 56px, var(--c3) 5px, var(--c2) 6px 9px, var(--c3) 10px 15px, var(--c2) 16px 17px, var(--c3) 18px 23px, var(--c2) 24px 25px, transparent 26px),
-    radial-gradient(circle at 0 0, var(--c3) 5px, var(--c2) 6px 9px, var(--c3) 10px 15px, var(--c2) 16px 17px, var(--c3) 18px 23px, var(--c2) 24px 25px, transparent 26px);
-
-  background: 
-    var(--pattern),
-    linear-gradient(135deg, rgba(50, 70, 120, 0.05) 0%, transparent 100%);
-  background-size: 96px 56px;
-  background-color: var(--c1);
-
-  color: #ffffff;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  transition: all 0.3s ease;
-
-  animation: subtleMove 25s ease-in-out infinite;
+// Contact form handling
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const name = this.querySelector('input[type="text"]').value;
+        const email = this.querySelector('input[type="email"]').value;
+        const message = this.querySelector('textarea').value;
+        
+        // Basic validation
+        if (name && email && message) {
+            // Show success message
+            alert('Thank you for reaching out, ' + name + '! I will get back to you soon.');
+            this.reset();
+        } else {
+            alert('Please fill in all fields.');
+        }
+    });
 }
 
-@keyframes subtleMove {
-  0% { background-size: 96px 56px; }
-  50% { background-size: 105px 60px; }
-  100% { background-size: 96px 56px; }
+// Add scroll animation for elements
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// Observe all project cards, blog cards, and skill categories
+document.querySelectorAll('.project-card, .blog-card, .skill-category, .info-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+});
+
+// Active navigation link highlighting
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+
+window.addEventListener('scroll', () => {
+    let current = '';
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute('id');
+        }
+    });
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').substring(1) === current) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// Add active state styles
+const style = document.createElement('style');
+style.textContent = `
+    .nav-link.active {
+        color: #667eea;
+        border-bottom: 2px solid #667eea;
+        padding-bottom: 5px;
+    }
+`;
+document.head.appendChild(style);
+
+// Mobile menu toggle (if you add a mobile menu button later)
+const mobileMenuButton = document.querySelector('.mobile-menu-toggle');
+const navMenu = document.querySelector('.nav-menu');
+
+if (mobileMenuButton) {
+    mobileMenuButton.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
 }
 
-body:hover {
-  background-size: 110px 65px;
+// Lazy load images (future enhancement)
+if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                observer.unobserve(img);
+            }
+        });
+    });
+    
+    document.querySelectorAll('img.lazy').forEach(img => imageObserver.observe(img));
 }
+
+// Log page load
+console.log('Portfolio website loaded successfully!');
+console.log('Version: 1.0.0');
+console.log('Author: Byanshuman');
+console.log('Last updated: December 2025');
