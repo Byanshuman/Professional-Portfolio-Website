@@ -155,6 +155,16 @@ body {
     gap: 2rem;
 }
 
+/* Profile image display - appears above Professional Mission */
+.about-content .profile-image {
+  display: block;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 30px;
+}
+
 .about-text p {
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
